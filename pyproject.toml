@@ -1,0 +1,17 @@
+[project]
+name = "ln-data-preparation"
+version = "0.1.0"
+description = ""
+readme = ""
+requires-python = ">=3.12"
+dependencies = [
+"numpy==1.26.4",
+"requests",
+"pandas",
+"scipy",
+"tqdm",
+"ray",
+"networkx>=3.4.2",
+"swiftshadow",
+"lntopo@git+https://github.com/Ellariel/topology",
+]
