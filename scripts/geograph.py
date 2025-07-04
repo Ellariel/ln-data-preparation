@@ -40,7 +40,7 @@ if os.path.exists(addresses):
 else:
     addresses = pd.DataFrame()
 
-geographs = os.path.join(data_dir, "shapes_geo.csv.tmp")
+geographs = os.path.join(data_dir, "shapes.geo.csv.tmp")
 if os.path.exists(geographs):
     results = pd.read_csv(geographs, dtype=str)
 else:
@@ -55,7 +55,7 @@ for item in tqdm(graphs.file_name):
     timestamp = get_stamp(item)
     if not timestamp in timestamps:
         g = nx.read_gml(os.path.join(data_dir, item))
-        fname = f"{timestamp}_geo.gml"
+        fname = f"{timestamp}.gml.geo"
         encoded = 0
         for n in g.nodes:
             try:
@@ -66,14 +66,14 @@ for item in tqdm(graphs.file_name):
             except:
                 pass
         nx.write_gml(g, os.path.join(data_dir, fname))
-        a = pd.DataFrame([(timestamp, len(g.nodes), encoded, fname)], 
-                columns=['timestamp', 'nodes', 'geocoded_nodes', 'file_name'])
+        a = pd.DataFrame([(timestamp, encoded, fname)], 
+                columns=['timestamp', 'geocoded_nodes', 'file_name'])
         results = pd.concat([results, a])
         timestamps.add(timestamp)     
 
 results.to_csv(geographs, index=False)
 
 
-pd.concat([graphs[['timestamp', 'datetime', 'nodes', 'edges']],
+pd.concat([graphs[['timestamp', 'datetime', 'nodes', 'channels', 'degree']],
                    results[['geocoded_nodes', 'file_name']]], axis=1)\
-                   .to_csv(os.path.join(data_dir, "shapes_geo.csv"), index=False)
+                   .to_csv(os.path.join(data_dir, "shapes.geo.csv"), index=False)

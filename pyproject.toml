@@ -1,8 +1,7 @@
 [project]
 name = "ln-data-preparation"
 version = "0.1.0"
-description = ""
-readme = ""
+description = "Scripts for Lightning Network snapshots generation and geocoding."
 requires-python = ">=3.12"
 dependencies = [
 "numpy==1.26.4",
@@ -11,7 +10,8 @@ dependencies = [
 "scipy",
 "tqdm",
 "ray",
-"networkx>=3.4.2",
 "swiftshadow",
-"lntopo@git+https://github.com/Ellariel/topology",
+"networkx>=3.4.2",
+"lntopo@git+https://github.com/ellariel/topology",
+# "lntopo@git+https://github.com/lnresearch/topology",
 ]

@@ -13,9 +13,9 @@ def set_seed(seed=13):
     np.random.seed(seed)
 
 
-def read_shape(fname):
+def read_shape_and_degree(fname):
     g = nx.read_gml(fname)
-    return len(g.nodes), len(g.edges)
+    return len(g.nodes), len(g.edges), np.mean(list(dict(g.degree).values()))
 
 
 def get_stamp(s):
