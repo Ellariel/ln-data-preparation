@@ -1,31 +1,26 @@
-## Topology and Network Dynamics of the Lightning Network: A Comprehensive Analysis
+### Scripts for Lightning Network snapshots reconstruction and geocoding.
 
-These are the data and scripts associated with the paper on the comprehensive analysis of the network’s topology and its temporal dynamics. The folder contains several scripts and a Dockerfile used to compute various network science metrics. The final results of these calculations are available in `result/metrics.csv` and it is merged with `make_metrics.py`. All figures from the paper can be reproduced using the `make_figures.py` script.
+These are the scripts associated with a data paper on the Lightning Network snapshots reconstruction and georeferencing. The folder contains several scripts representing a complete pipline. All figures from the paper can be reproduced using `misc/view.ipynb`.
 
-Note that since the raw data is quite large, we did not mirror it here, but it can be directly downloaded from [(Decker, 2020)](https://github.com/lnresearch/topology). Working and temporary data and results are also not stored here, but can be reproduced with the scripts available, see `metrics_*.py`.
-
-The repository includes the following calculated metrics (see `utils.py`):
-
- **Category**|**Metrics and attributes**                    
--------------|--------------------------
-Basic Network Structure|nodes, edges (channels), components, density, diameter, shortest path length, mean degree, degree assortativity
-Connectivity & Resilience|bridges, average node connectivity, minimal edge cover, transitivity, average clustering
-Function & Dynamics|global efficiency, information centrality, mean betweenness centrality, communicability betweenness centrality, common neighbor centrality, constraint value, effective size, Burt's effective size, closeness vitality
-Emergent Patterns|resource allocation index, Jaccard coefficient, preferential attachment, label communities (FLP), lpa communities (ALP)
-Other|payment hop distribution and degree distribution approximation parameters, Gini betweenness centrality, node intersection rate, channel intersection rate, Wiener index
+| Stage     |Scripts           |
+|:----------|:-----------------|
+| 1. Data acquisition | 1. `download.py` |
+| 2. Network graph reconstruction | 2. `slice.py` |
+| 3. Pre-processing and consistency control | 3. `shapes.py` <br/> 4. `clean.py` |
+| 4. Geocoding | 5. `addresses.py` <br/> 6. `geocode.py` <br/> 7. `geograph.py` |
 
 
-### Citation
+#### Citation
 
 ```python
-Valko, D., & Marx Gómez, J. (2025). Topology and Network Dynamics of the Lightning Network: A Comprehensive Analysis
+Anonymous (). Scripts for Lightning Network snapshots reconstruction and geocoding
 ```
 
 ```python
-@misc{ValkoMarxGómez2025,
-title={Topology and Network Dynamics of the Lightning Network: A Comprehensive Analysis}, 
-author={Danila Valko and Jorge Marx Gómez},
-year={2025},
+@misc{Anonymous,
+title={Scripts for Lightning Network snapshots reconstruction and geocoding}, 
+author={},
+year={},
 journal = {},
 month = {},
 volume = {},
@@ -35,9 +30,11 @@ doi = {},
 ```
 
 
-### Sources and References
+#### Sources and References
 
-- Raw data snapshots of the Lightning Network are obtained from [(Decker, 2020)](https://github.com/lnresearch/topology).
-- Native pathfinding algorithms are based on [[Kumble & Roos, 2021]](https://ieeexplore.ieee.org/document/9566199); [[Kumble, Epema & Roos, 2021]](https://arxiv.org/pdf/2107.10070.pdf); see also, [GitHub](https://github.com/SatwikPrabhu/Attacking-Lightning-s-anonymity).
+- The NetworkX library was used to represent and store network graphs, see Hagberg, A. A., Schult, D. A., & Swart, P. J. (2008). Exploring network structure, dynamics, and function using NetworkX. In G. Varoquaux, T. Vaught, & J. Millman (Eds.), *Proceedings of the 7th Python in Science Conference (SciPy2008)* (pp. 11–15). Pasadena, CA, USA. https://networkx.org/documentation/stable/index.html
+- Lightning Network gossip messages data and related algorithms comes from Decker, C. (2020). Lightning Network Research - Topology Datasets. https://github.com/lnresearch/topology
+- The IPinfo developer API was used to geocode the nodes. https://ipinfo.io
+
 
 
