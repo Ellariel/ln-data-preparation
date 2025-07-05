@@ -2,6 +2,9 @@
 
 These are the scripts associated with a data paper on the Lightning Network snapshots reconstruction and georeferencing. The folder contains several scripts representing a complete pipline. All figures from the paper can be reproduced using `misc/view.ipynb`.
 
+Scripts must be executed in the sequence specified in the table bellow. Input data, temporary data and final data must be stored in the `data` folder until the scripts are finished.
+
+
 | Stage     |Scripts           |
 |:----------|:-----------------|
 | 1. Data acquisition | 1. `download.py` |
