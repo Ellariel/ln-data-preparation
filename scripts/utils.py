@@ -25,6 +25,11 @@ def get_stamp(s):
     return s
 
 
+def diameter_approximation(fname, seed=13):
+    g = nx.read_gml(fname)
+    return np.max([np.max(list(j.values())) for i, j in nx.shortest_path_length(g)])
+
+
 def restore_graph(datafile, timestamp, verbose=True):
     """Restore reconstructs the network topology at a specific time in the past.
     Restore replays gossip messages from a dataset and reconstructs

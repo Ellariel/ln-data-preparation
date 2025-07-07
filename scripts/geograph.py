@@ -74,6 +74,6 @@ for item in tqdm(graphs.file_name):
 results.to_csv(geographs, index=False)
 
 
-pd.concat([graphs[['timestamp', 'datetime', 'nodes', 'channels', 'degree']],
+pd.concat([graphs[['timestamp', 'datetime', 'nodes', 'channels', 'degree', 'diameter']],
                    results[['geocoded_nodes', 'file_name']]], axis=1)\
                    .to_csv(os.path.join(data_dir, "shapes.geo.csv"), index=False)
