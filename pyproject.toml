@@ -1,7 +1,7 @@
 [project]
 name = "ln-data-preparation"
 version = "0.1.0"
-description = "Scripts for Lightning Network snapshots generation and geocoding."
+description = "Scripts for Lightning Network snapshots reconstruction and geocoding."
 requires-python = ">=3.12"
 dependencies = [
 "numpy==1.26.4",
