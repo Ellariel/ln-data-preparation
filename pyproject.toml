@@ -1,0 +1,17 @@
+[project]
+name = "ln-data-preparation"
+version = "0.1.0"
+description = "Scripts for Lightning Network snapshots reconstruction and geocoding."
+requires-python = ">=3.12"
+dependencies = [
+"numpy==1.26.4",
+"requests",
+"pandas",
+"scipy",
+"tqdm",
+"ray",
+"swiftshadow",
+"networkx>=3.4.2",
+"lntopo@git+https://github.com/ellariel/topology",
+# "lntopo@git+https://github.com/lnresearch/topology",
+]
