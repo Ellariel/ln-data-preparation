@@ -16,19 +16,16 @@ Scripts must be executed in the sequence specified in the table bellow. Input da
 #### Citation
 
 ```python
-Danila Valko and Jorge Marx Gómez (2025). Geolocated Lightning Network topology snapshots: A dataset covering 2019–2023.
+Danila Valko and Jorge Marx Gómez (2025). Geolocated lightning network topology snapshots: A dataset covering 2019–2023. Scientific Data. https://doi.org/10.1038/s41597-025-06413-7
 ```
 
 ```python
-@misc{ValkoMarxGomez2025,
-title={Geolocated Lightning Network topology snapshots: A dataset covering 2019–2023}, 
-author={Danila Valko and Jorge {Marx Gómez}},
+@article{ValkoMarxGomez2025,
+title={Geolocated lightning network topology snapshots: A dataset covering 2019–2023}, 
+author={Danila Valko and Jorge {Marx G\'omez}},
 year={2025},
-journal = {},
-month = {},
-volume = {},
-pages = {},
-doi = {},
+journal = {Scientific Data},
+doi = {10.1038/s41597-025-06413-7},
 }
 ```
 
